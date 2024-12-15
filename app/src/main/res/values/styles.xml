@@ -1,0 +1,9 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.VoluntariadoComunitario" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary" />
+        <item name="colorPrimaryDark"/>
+        <item name="colorAccent"/>
+    </style>
+</resources>

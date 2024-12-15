@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "771183860767",
+    "firebase_url": "https://voluntariado-ca68c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "voluntariado-ca68c",
+    "storage_bucket": "voluntariado-ca68c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771183860767:android:6b08e2c1db9af01727c92a",
+        "android_client_info": {
+          "package_name": "com.example.voluntariadocomunitario"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAaBSRmoszGgnNophjwNuyg7ca9ET_e7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
