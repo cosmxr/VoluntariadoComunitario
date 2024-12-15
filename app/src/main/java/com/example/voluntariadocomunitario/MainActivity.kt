@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Fetch and display the list of events
-        fetchAndDisplayEvents()
+        // fetchAndDisplayEvents()
     }
 
     private fun fetchAndDisplayEvents() {
