@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.voluntariadocomunitario.databinding.FragmentSearchBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), OpportunitiesAdapter.OnItemClickListener {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
@@ -29,7 +30,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Configure the RecyclerView
-        adapter = OpportunitiesAdapter(events)
+        adapter = OpportunitiesAdapter(events, this)
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
 
@@ -54,6 +55,18 @@ class SearchFragment : Fragment() {
     private fun filterOpportunities(query: String) {
         val filteredEvents = events.filter { it.title.contains(query, ignoreCase = true) }
         adapter.updateData(filteredEvents)
+    }
+
+    override fun onItemClick(voluntaryAct: VoluntaryAct) {
+        showEventDetailsDialog(voluntaryAct)
+    }
+
+    private fun showEventDetailsDialog(voluntaryAct: VoluntaryAct) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(voluntaryAct.title)
+            .setMessage("Date: ${voluntaryAct.date}\n\nDescription: ${voluntaryAct.description}")
+            .setPositiveButton("OK", null)
+            .show()
     }
 
     override fun onDestroyView() {
