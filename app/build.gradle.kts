@@ -62,6 +62,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
     implementation("androidx.navigation:navigation-compose:2.7.2")
     implementation(libs.firebase.database.ktx)
+    implementation(libs.play.services.location)
 
     // Testing
     testImplementation("junit:junit:4.13.2")

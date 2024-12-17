@@ -6,7 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import androidx.lifecycle.lifecycleScope
+import VoluntaryAct
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,7 +31,7 @@ class VolunteerOpportunitiesWidget : AppWidgetProvider() {
             val upcomingEvents = filterUpcomingEvents(events)
             val titles = upcomingEvents.joinToString("\n") { it.title }
 
-            views.setTextViewText(R.id.widget_title, "Upcoming Volunteer Opportunities")
+            views.setTextViewText(R.id.widget_title, "Se Acercan Eventos!!")
             views.setTextViewText(R.id.widget_item, titles)
 
             // Create an Intent to launch MainActivity

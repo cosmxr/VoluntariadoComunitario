@@ -1,5 +1,6 @@
 package com.example.voluntariadocomunitario
 
+import VoluntaryAct
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -64,7 +65,7 @@ class SearchFragment : Fragment(), OpportunitiesAdapter.OnItemClickListener {
     private fun showEventDetailsDialog(voluntaryAct: VoluntaryAct) {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(voluntaryAct.title)
-            .setMessage("Date: ${voluntaryAct.date}\n\nDescription: ${voluntaryAct.description}")
+            .setMessage("Fecha: ${voluntaryAct.date}\n\nDescripción: ${voluntaryAct.description}")
             .setPositiveButton("OK", null)
             .show()
     }

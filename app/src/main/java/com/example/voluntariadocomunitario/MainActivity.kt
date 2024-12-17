@@ -2,31 +2,31 @@ package com.example.voluntariadocomunitario
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.commit
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.voluntariadocomunitario.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add(R.id.fragment_container_view, SearchFragment())
-            }
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
+        val navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
+
+        binding.nearbyActivitiesButton.setOnClickListener {
+            navController.navigate(R.id.action_searchFragment_to_nearbyActivitiesFragment)
         }
-
-        // Fetch and display the list of events
-        // fetchAndDisplayEvents()
     }
 
-    private fun fetchAndDisplayEvents() {
-        lifecycleScope.launch {
-            val firebaseHelper = FirebaseHelper()
-            val events = firebaseHelper.getVoluntaryActs()
-            // Pass the events to the fragment or update the UI directly
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.fragment_container_view)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

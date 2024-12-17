@@ -1,5 +1,6 @@
 package com.example.voluntariadocomunitario
 
+import VoluntaryAct
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObjects
 import kotlinx.coroutines.tasks.await
