@@ -50,4 +50,4 @@ Proveedor de widget que muestra las próximas actividades de voluntariado en la 
 2. **Ver Actividades Cercanas**: Presiona el botón "Eventos Cercanos" para ver las actividades dentro de un radio de 50 km de tu ubicación actual.
 3. **Ver Detalles de la Actividad**: Toca una actividad en la lista para ver sus detalles.
 
-link al repositorio ->
+link al repositorio -> https://github.com/cosmxr/VoluntariadoComunitario.git
